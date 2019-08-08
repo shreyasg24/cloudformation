@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources: 
+  MyQueue: 
+    Type: AWS::SQS::Queue
+  
+  MySnsTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      Subscription: 
+        -
+          Endpoint: 
+            Fn::GetAtt:
+              -  "MyQueue"
+              -  "Arn"
+          Protocol: "sqs"
