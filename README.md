@@ -1,2 +1,2 @@
 # cloudformation
-Contains deployments of various CloudFormation resources
+Contains tempaltes of various CloudFormation resources
